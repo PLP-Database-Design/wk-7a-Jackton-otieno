@@ -1,17 +1,26 @@
 --- Question 1
 
-CREATE TABLE ProductDetail1NF (
+CREATE TABLE ProductDetail_1NF (
     OrderID INT,
-    CustomerName VARCHAR(255),
-    Product VARCHAR(255)
+    CustomerName VARCHAR(100),
+    Product VARCHAR(100)
 );
 
-INSERT INTO ProductDetail1NF (OrderID, CustomerName, Product) VALUES (101, 'John Doe', 'Laptop');
-INSERT INTO ProductDetail1NF (OrderID, CustomerName, Product) VALUES (101, 'John Doe', 'Mouse');
-INSERT INTO ProductDetail1NF (OrderID, CustomerName, Product) VALUES (102, 'Jane Smith', 'Tablet');
-INSERT INTO ProductDetail1NF (OrderID, CustomerName, Product) VALUES (102, 'Jane Smith', 'Keyboard');
-INSERT INTO ProductDetail1NF (OrderID, CustomerName, Product) VALUES (102, 'Jane Smith', 'Mouse');
-INSERT INTO ProductDetail1NF (OrderID, CustomerName, Product) VALUES (103, 'Emily Clark', 'Phone');
+-- For John Doe
+INSERT INTO ProductDetail_1NF VALUES (101, 'John Doe', 'Laptop');
+INSERT INTO ProductDetail_1NF VALUES (101, 'John Doe', 'Mouse');
+
+-- For Jane Smith
+INSERT INTO ProductDetail_1NF VALUES (102, 'Jane Smith', 'Tablet');
+INSERT INTO ProductDetail_1NF VALUES (102, 'Jane Smith', 'Keyboard');
+INSERT INTO ProductDetail_1NF VALUES (102, 'Jane Smith', 'Mouse');
+
+-- For Emily Clark
+INSERT INTO ProductDetail_1NF VALUES (103, 'Emily Clark', 'Phone');
+
+
+
+
 
 --- Question 2
 
