@@ -27,25 +27,31 @@ INSERT INTO ProductDetail_1NF VALUES (103, 'Emily Clark', 'Phone');
 
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY,
-    CustomerName VARCHAR(255)
+    CustomerName VARCHAR(100)
 );
 
-CREATE TABLE OrderProducts (
+CREATE TABLE Product (
     OrderID INT,
-    Product VARCHAR(255),
+    Product VARCHAR(100),
     Quantity INT,
     PRIMARY KEY (OrderID, Product),
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
 );
 
-INSERT INTO Orders (OrderID, CustomerName) VALUES (101, 'John Doe');
-INSERT INTO Orders (OrderID, CustomerName) VALUES (102, 'Jane Smith');
-INSERT INTO Orders (OrderID, CustomerName) VALUES (103, 'Emily Clark');
 
+-- Orders
+INSERT INTO Orders (OrderID, CustomerName)
+VALUES
+(101, 'John Doe'),
+(102, 'Jane Smith'),
+(103, 'Emily Clark');
 
-INSERT INTO OrderProducts (OrderID, Product, Quantity) VALUES (101, 'Laptop', 2);
-INSERT INTO OrderProducts (OrderID, Product, Quantity) VALUES (101, 'Mouse', 1);
-INSERT INTO OrderProducts (OrderID, Product, Quantity) VALUES (102, 'Tablet', 3);
-INSERT INTO OrderProducts (OrderID, Product, Quantity) VALUES (102, 'Keyboard', 1);
-INSERT INTO OrderProducts (OrderID, Product, Quantity) VALUES (102, 'Mouse', 2);
-INSERT INTO OrderProducts (OrderID, Product, Quantity) VALUES (103, 'Phone', 1);
+-- Product
+INSERT INTO Product (OrderID, Product, Quantity)
+VALUES
+(101, 'Laptop', 2),
+(101, 'Mouse', 1),
+(102, 'Tablet', 3),
+(102, 'Keyboard', 1),
+(102, 'Mouse', 2),
+(103, 'Phone', 1);
